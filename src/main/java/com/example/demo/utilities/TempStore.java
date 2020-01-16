@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class TempStore {
     private List<User> userList = new ArrayList<>();
     private List<UserHistory> userHistoryList = new ArrayList<>();
-
+ // For Utility components such as calculations/ tempory storage etc. Must be annotated with @Component
     public void addNewUser(User user){
         userList.add(user);
     }

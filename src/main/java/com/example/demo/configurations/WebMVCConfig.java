@@ -11,7 +11,8 @@ public class WebMVCConfig implements WebMvcConfigurer {
 
     @Autowired
     Handler handler;
-
+ // Contains project configurations files. E.g Spring Config
+    //configure handler
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(handler);

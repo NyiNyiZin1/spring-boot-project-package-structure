@@ -14,7 +14,7 @@ public class MainController extends CloneNotSupportedException{
 
     @Autowired
     TempStore tempStore;
-
+ // For Every Classes must be Annotated with @RestController
     @GetMapping("/user/{id}")
     public UserDto getUser(@PathVariable int id) throws Exception {
         User user = tempStore.getUser(id);
@@ -25,6 +25,7 @@ public class MainController extends CloneNotSupportedException{
     public String saveUser(@RequestBody UserDto userDto) throws Exception {
         User originalUser = tempStore.getUser(userDto.getId());
         User toSaveUser = userDto.toEntity(originalUser);
+     // Data Transfer Objects/Models that will be transferred between services.
         tempStore.saveHistory(toSaveUser.createHistory("Modify"));//tempStore.saveHistory(entity.class);
         tempStore.modifyUser(toSaveUser);
         return "success";

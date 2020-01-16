@@ -21,7 +21,7 @@ public class Handler implements HandlerInterceptor {
     TempStore tempStore;
 
     Logger logger = LoggerFactory.getLogger(Handler.class);
-
+ // For Event/user action Handlers (DB, controller, system, etc..)
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HandlerMethod method = (HandlerMethod) handler;
