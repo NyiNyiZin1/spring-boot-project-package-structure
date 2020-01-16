@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class MainController {
+public class MainController extends CloneNotSupportedException{
 
     @Autowired
     TempStore tempStore;
@@ -25,7 +25,7 @@ public class MainController {
     public String saveUser(@RequestBody UserDto userDto) throws Exception {
         User originalUser = tempStore.getUser(userDto.getId());
         User toSaveUser = userDto.toEntity(originalUser);
-        tempStore.saveHistory(toSaveUser.createHistory("Modify"));
+        tempStore.saveHistory(toSaveUser.createHistory("Modify"));//tempStore.saveHistory(entity.class);
         tempStore.modifyUser(toSaveUser);
         return "success";
     }
