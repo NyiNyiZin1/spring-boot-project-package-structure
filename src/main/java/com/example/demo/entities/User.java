@@ -3,7 +3,7 @@ package com.example.demo.entities;
 import java.util.Calendar;
 
 public class User extends BaseEntity<UserHistory> implements Cloneable{
-	/ For DOM classes which represent database entities. @Entity annotation required.
+	// For DOM classes which represent database entities. @Entity annotation required.
     private int id;
     private String name;
     private String address;
